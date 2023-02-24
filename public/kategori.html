@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Kategori Produk</title>
+</head>
+<body>
+    <div class="navbar bg-primary text-primary-content">
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="index.html">Daftar Produk</a></li>
+                <li class="active"><a href="kategori.html">Kategori Produk</a></li>
+                <li><a href="transaksi.html">Transaksi penjualan</a></li>
+                <li><a href="konsumen.html">Konsumen</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container mx-auto">
+        <div class="flex justify-center gap-5">
+            <div class="card w-96 glass">
+                <div class="card-body">
+                    <h2 class="card-title">Kategori Produk</h2>
+                    <p>
+                        <form action="" id="form-kategori" onsubmit="event.preventDefault(); tambahKategori(this);">
+                            <input type="hidden" name="index" value="-1">
+                            <div>
+                                <label for="namaKategori" class="label">Nama Kategori</label>
+                            </div>
+                            <div>
+                                <input type="text" id="namaKategori" name="namaKategori" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
+                            </div>
+                            <div class="card-actions justify-end">
+                                <button id="btn-save-kategori" class="btn btn-primary mt-2 btn-sm">Simpan</button>
+                            </div>
+                        </form>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card w-96 glass">
+                <div class="card-body">
+                    <h2 class="card-title">Kategori Produk</h2>
+                    <p>
+                        <div id="daftar-kategori"></div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="kategori.js"></script>
+</body>
+</html>
