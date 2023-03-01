@@ -14,9 +14,9 @@
         <div class="flex-none">
             <ul class="menu menu-horizontal px-1">
                 <li><a href="index.html">Daftar Produk</a></li>
-                <li><a href="kategori.html">Kategori Produk</a></li>
-                <li class="active"><a href="transaksi.html">Transaksi penjualan</a></li>
-                <li><a href="konsumen.html">Konsumen</a></li>
+                <li><a href="category.html">Kategori Produk</a></li>
+                <li class="active"><a href="transaction.html">Transaksi penjualan</a></li>
+                <li><a href="consumer.html">Konsumen</a></li>
             </ul>
         </div>
     </div>
@@ -27,62 +27,66 @@
                 <div class="card-body">
                     <h2 class="card-title">Transaksi Penjualan</h2>
                     <p>
-                        <form id="form-transaksi" action="" onsubmit="event.preventDefault(); tambahTransaksi(this)">
+                        <form id="form-transaction" action="" onsubmit="event.preventDefault(); addTransaction(this)">
                             <input type="hidden" name="index" value="-1">
                             <div class="form-control w-full max-w-xs">
                                 <div>
-                                    <label for="konsumen" class="label">Konsumen</label>
+                                    <label for="consumer" class="label">Konsumen</label>
                                 </div>
                                 <div>
-                                    <select id="konsumen" name="konsumen" class="select select-primary w-full max-w-xs select-sm"></select>
+                                    <select id="consumer" name="consumer" class="select select-primary w-full max-w-xs select-sm">
+                                        <option>Pilih Konsumen</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-control w-full max-w-xs">
                                 <div>
-                                    <label for="produk" class="label">Pilih produk</label>
+                                    <label for="product" class="label">Pilih Produk</label>
                                 </div>
                                 <div>
-                                    <select id="produk" name="produk" class="select select-primary w-full max-w-xs select-sm"></select>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="nama" class="label">Nama Produk</label>
-                                </div>
-                                <div>
-                                    <input type="text" id="nama" name="nama" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly>
+                                    <select id="product" name="product" class="select select-primary w-full max-w-xs select-sm">
+                                        <option>Pilih Produk</option>
+                                    </select>
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <label for="harga" class="label">Harga Produk</label>
+                                    <label for="name" class="label">Nama Produk</label>
                                 </div>
                                 <div>
-                                    <input type="number" id="harga" name="harga" class="input input-bordered input-primary file-input-sm w-full max-w-xs" onkeyup="hargaTotal()" readonly>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="stok" class="label">Stok Produk</label>
-                                </div>
-                                <div>
-                                    <input type="number" id="stok" name="stok" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly>
+                                    <input type="text" id="name" name="name" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly>
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <label for="gambar" class="label">Link Gambar Produk</label>
+                                    <label for="price" class="label">Harga Produk</label>
                                 </div>
                                 <div>
-                                    <input type="text" id="gambar" name="gambar" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly>
+                                    <input type="number" id="price" name="price" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly onkeyup="countTotalPrice()">
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <label for="jumlah" class="label">Jumlah</label>
+                                    <label for="stock" class="label">Stok Produk</label>
                                 </div>
                                 <div>
-                                    <input type="number" id="jumlah" name="jumlah" class="input input-bordered input-primary file-input-sm w-full max-w-xs" onkeyup="hargaTotal()">
+                                    <input type="number" id="stock" name="stock" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <label for="image" class="label">Link Gambar Produk</label>
+                                </div>
+                                <div>
+                                    <input type="text" id="image" name="image" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <label for="sum" class="label">Jumlah</label>
+                                </div>
+                                <div>
+                                    <input type="number" id="sum" name="sum" class="input input-bordered input-primary file-input-sm w-full max-w-xs" onkeyup="countTotalPrice()">
                                 </div>
                             </div>
                             <div>
@@ -90,27 +94,27 @@
                                     <label for="total" class="label">Total Harga</label>
                                 </div>
                                 <div>
-                                    <input type="number" id="total" name="total" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly onkeyup="jumlahKembalian()">
+                                    <input type="number" id="total" name="total" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly onkeyup="countTotalPrice()">
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <label for="tunai" class="label">Tunai</label>
+                                    <label for="cash" class="label">Tunai</label>
                                 </div>
                                 <div>
-                                    <input type="number" id="tunai" name="tunai" class="input input-bordered input-primary file-input-sm w-full max-w-xs" onkeyup="jumlahKembalian()">
+                                    <input type="number" id="cash" name="cash" class="input input-bordered input-primary file-input-sm w-full max-w-xs" onkeyup="countTotalPrice()">
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <label for="kembalian" class="label">Kembalian</label>
+                                    <label for="change" class="label">Kembalian</label>
                                 </div>
                                 <div>
-                                    <input type="number" id="kembalian" name="kembalian" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly>
+                                    <input type="number" id="change" name="change" class="input input-bordered input-primary file-input-sm w-full max-w-xs" readonly>
                                 </div>
                             </div>
                             <div class="card-actions justify-end">
-                                <button id="btn-save-transaksi" class="btn btn-primary mt-2 btn-sm">Simpan</button>
+                                <button id="btn-save-transaction" class="btn btn-primary mt-2 btn-sm">Simpan</button>
                             </div>
                         </form>
                     </p>
@@ -121,13 +125,13 @@
                 <div class="card-body">
                     <h2 class="card-title">History Penjualan</h2>
                     <p>
-                        <div id="daftar-transaksi"></div>
+                        <div id="transaction-list"></div>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="transaksi.js"></script>
+    <script type="text/javascript" src="transaction.js"></script>
 </body>
 </html>

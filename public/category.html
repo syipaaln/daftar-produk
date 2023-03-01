@@ -13,9 +13,9 @@
         <div class="flex-none">
             <ul class="menu menu-horizontal px-1">
                 <li><a href="index.html">Daftar Produk</a></li>
-                <li class="active"><a href="kategori.html">Kategori Produk</a></li>
-                <li><a href="transaksi.html">Transaksi penjualan</a></li>
-                <li><a href="konsumen.html">Konsumen</a></li>
+                <li class="active"><a href="category.html">Kategori Produk</a></li>
+                <li><a href="transaction.html">Transaksi penjualan</a></li>
+                <li><a href="consumer.html">Konsumen</a></li>
             </ul>
         </div>
     </div>
@@ -25,16 +25,16 @@
                 <div class="card-body">
                     <h2 class="card-title">Kategori Produk</h2>
                     <p>
-                        <form action="" id="form-kategori" onsubmit="event.preventDefault(); tambahKategori(this);">
+                        <form action="" id="form-category" onsubmit="event.preventDefault(); addCategory(this);">
                             <input type="hidden" name="index" value="-1">
                             <div>
-                                <label for="namaKategori" class="label">Nama Kategori</label>
+                                <label for="categoryName" class="label">Nama Kategori</label>
                             </div>
                             <div>
-                                <input type="text" id="namaKategori" name="namaKategori" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
+                                <input type="text" id="categoryName" name="categoryName" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
                             </div>
                             <div class="card-actions justify-end">
-                                <button id="btn-save-kategori" class="btn btn-primary mt-2 btn-sm">Simpan</button>
+                                <button id="btn-save-category" class="btn btn-primary mt-2 btn-sm">Simpan</button>
                             </div>
                         </form>
                     </p>
@@ -45,13 +45,13 @@
                 <div class="card-body">
                     <h2 class="card-title">Kategori Produk</h2>
                     <p>
-                        <div id="daftar-kategori"></div>
+                        <div id="category-list"></div>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="kategori.js"></script>
+    <script src="category.js"></script>
 </body>
 </html>

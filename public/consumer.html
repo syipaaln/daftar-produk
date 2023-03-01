@@ -13,9 +13,9 @@
         <div class="flex-none">
             <ul class="menu menu-horizontal px-1">
                 <li><a href="index.html">Daftar Produk</a></li>
-                <li><a href="kategori.html">Kategori Produk</a></li>
-                <li><a href="transaksi.html">Transaksi penjualan</a></li>
-                <li class="active"><a href="konsumen.html">Konsumen</a></li>
+                <li><a href="category.html">Kategori Produk</a></li>
+                <li><a href="transaction.html">Transaksi penjualan</a></li>
+                <li class="active"><a href="consumer.html">Konsumen</a></li>
             </ul>
         </div>
     </div>
@@ -26,26 +26,26 @@
                 <div class="card-body">
                     <h2 class="card-title">Konsumen</h2>
                     <p>
-                        <form action="" id="form-konsumen" onsubmit="event.preventDefault(); tambahKonsumen(this)">
+                        <form action="" id="form-consumer" onsubmit="event.preventDefault(); addConsumer(this)">
                             <input type="hidden" name="index" value="-1">
                             <div>
                                 <div>
-                                    <label for="namaKonsumen" class="label">Nama</label>
+                                    <label for="consumerName" class="label">Nama</label>
                                 </div>
                                 <div>
-                                    <input type="text" id="namaKonsumen" name="namaKonsumen" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
+                                    <input type="text" id="consumerName" name="consumerName" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
                                 </div>
                                 <div>
-                                    <label for="alamatKonsumen" class="label">Alamat</label>
+                                    <label for="consumerAddress" class="label">Alamat</label>
                                 </div>
                                 <div>
-                                    <input type="text" id="alamatKonsumen" name="alamatKonsumen" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
+                                    <input type="text" id="consumerAddress" name="consumerAddress" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
                                 </div>
                                 <div>
-                                    <label for="noHP" class="label">No HP</label>
+                                    <label for="numberHandphone" class="label">No Handphone</label>
                                 </div>
                                 <div>
-                                    <input type="text" id="noHP" name="noHP" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
+                                    <input type="text" id="numberHandphone" name="numberHandphone" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
                                 </div>
                                 <div>
                                     <label for="email" class="label">Email</label>
@@ -54,7 +54,7 @@
                                     <input type="text" id="email" name="email" class="input input-bordered input-primary file-input-sm w-full max-w-xs">
                                 </div>
                                 <div class="card-actions justify-end">
-                                    <button id="btn-save-konsumen" class="btn btn-primary mt-2 btn-sm">Simpan</button>
+                                    <button id="btn-save-consumer" class="btn btn-primary mt-2 btn-sm">Simpan</button>
                                 </div>
                             </div>
                         </form>
@@ -66,13 +66,13 @@
                 <div class="card-body">
                     <h2 class="card-title">Konsumen</h2>
                     <p>
-                        <div id="daftar-konsumen"></div>
+                        <div id="consumer-list"></div>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="konsumen.js"></script>
+    <script src="consumer.js"></script>
 </body>
 </html>
